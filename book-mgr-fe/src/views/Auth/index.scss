@@ -1,0 +1,46 @@
+.bg {
+    position:fixed;//位置固定
+    left: 0;//铺满
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg");
+    background-repeat: no-repeat;//不重复
+    background-size: cover;
+    background-position: center center;
+
+}
+.auth {
+    .title-info {
+        text-align: center;
+        margin-top: 100px;//头顶空白
+        display: flex;
+        align-items: center;//图片标题同行居中
+        justify-content: center;
+        margin-bottom: 32px;
+
+        img {
+            width: 60px;
+            height: 60px;
+        }
+
+        h2 {
+            margin: 0;
+            margin-left: 18px;//标题左侧空白距离
+        }
+
+    }
+
+    .form {
+        width: 400px;
+        margin: 0 auto;//居中
+    }
+    
+    .item {
+        margin-bottom:  16px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
