@@ -1,4 +1,5 @@
 <template>
+    <!-- 认证 -->
     <div class="auth">
         <!-- 背景 -->
         <div class="bg"></div>
@@ -7,15 +8,17 @@
             <img src="https://ncstatic.clewm.net/rsrc/2020/1016/02/4757e4910cb527fc040d019a93ded74f.png?x-oss-process=image/resize,w_750/format,gif/sharpen,100/quality,Q_80/interlace,1/auto-orient,1" alt="">
             <h2 class="title">图书管理系统后台</h2>
         </div>
-        <!-- 表单 -->
+        <!-- 认证表单 -->
         <div class="form">
             <a-tabs>
-                <!-- 面1 -->
+                <!-- 认证菜单1； key：切；tab：标题-->
                 <a-tab-pane key="1" tab="登录">
 
                     <div class="item">
-                        <a-input size="large"
-                         placeholder="账户" 
+                        <a-input
+                         size="large"
+                         placeholder="账户"
+                         v-model:value="loginForm.account" 
                         >
                         <template
                          v-slot:prefix>       <!-- 前置插槽 -->
@@ -25,7 +28,11 @@
                     </div>
 
                     <div class="item">
-                        <a-input size="large" placeholder="密码" >
+                        <a-input
+                         size="large"
+                         placeholder="密码"
+                         v-model:value="loginForm.password" 
+                          >
                         <template
                          v-slot:prefix>       
                             <LockOutlined />   
@@ -38,15 +45,19 @@
                     </div>
 
                     <div class="item">
-                        <a-button size="large" type="primary">
+                        <a-button
+                         size="large"
+                          type="primary"
+                          @click="login" 
+                          >
                             登入
                         </a-button>
                     </div>
 
                 </a-tab-pane>
-                <!-- 面2 -->
+                <!-- 认证菜单2 -->
                 <a-tab-pane key="2" tab="注册">
-
+                    <!-- 账户 -->
                     <div class="item">
                         <a-input 
                          size="large" 
@@ -54,29 +65,32 @@
                          v-model:value="regForm.account"
                         >
                          <template
-                         v-slot:prefix>       <!-- 前置插槽 -->
-                            <UserOutlined /> <!-- 图标 -->
+                         v-slot:prefix>      <!-- 前置插槽 -->
+                            <UserOutlined /> <!-- 图标icon -->
                          </template>
                          </a-input>
                     </div>
-
+                    <!-- 密码 -->
                     <div class="item">
                         <a-input
                          size="large"
                          placeholder="密码"
                          v-model:value="regForm.password">
                         <template
-                         v-slot:prefix>       
-                            <LockOutlined />   
+                         v-slot:prefix>      <!-- 前置插槽 -->  
+                            <LockOutlined /> <!-- 图标icon -->   
                         </template>
                         </a-input>
                     </div>
-
+                    <!-- 邀请码 -->
                     <div class="item">
-                        <a-input placeholder="邀请码">
+                        <a-input
+                         size="large"
+                         placeholder="邀请码"
+                         v-model:value="regForm.inviteCode">
                         <template
-                         v-slot:prefix>       
-                            <MailOutlined />   
+                         v-slot:prefix>       <!-- 前置插槽 -->
+                            <MailOutlined />  <!-- 图标icon --> 
                         </template>
                         </a-input>
                     </div>
@@ -100,5 +114,6 @@
 <script src="./index.js"></script>
 
 <style lang="scss" scpoed>
+    //引进认证逻辑./index.js；引进元素描述./index.scss；
     @import './index.scss';
 </style>

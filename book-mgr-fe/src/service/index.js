@@ -1,2 +1,2 @@
-//所有auth相关函数统一命名为auth，并导出
+//所有./auth导出的内容聚合到auth
 export * as auth from './auth';

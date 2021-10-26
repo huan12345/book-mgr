@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-
+//前端路由配置
 const routes = [
   {
-    path: '/auth',
+    path: '/auth',//认证路径
     name: 'Auth',
-    component: () => import(/* webpackChunkName: "auth" */ '../views/Auth/index.vue'),
+    component: () => import(/* webpackChunkName: "auth" */ '../views/Auth/index.vue'),//认证的异步渲染
   },
 //  {
 //    path: '/about',
