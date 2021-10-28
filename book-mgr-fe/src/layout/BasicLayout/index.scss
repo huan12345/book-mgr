@@ -1,0 +1,73 @@
+// 基础布局框架样式  
+.basic-layout { // 总
+    .app-header-placeholder { // 突出页眉
+        height: 64px;
+        width: 100%;
+    }
+    .app-header { // 页眉
+        height: 64px;
+        position: fixed; // 相对浏览器绝对定位
+        top: 0;// 顶0
+        left: 0;// 左0
+        background-color: #fff;
+        box-shadow: 0 2px 8px #f0f1f2; // 阴影
+        display: flex; // "弹性布局"，用来为盒状模型提供最大的灵活性
+        align-items: center;// 所有内容在纵轴上垂直居中
+        justify-content: space-between;// 元素两端对齐
+        padding: 0 16px;// 左右空白
+        width: 100%;// 铺满  
+        z-index: 1;// z轴1
+
+        .left {
+            display: flex;
+            align-items: center;
+    
+            img {
+                height: 50px;
+                margin-right: 16px;
+            }
+            .title {
+                color: rgba(0,0,0,.87);
+                font-size: 18px;
+            }
+        }
+    
+        .right {
+            display: flex;
+            align-items: center;
+            // 退出
+            .logout {
+                width: 80px;
+                text-align: center; 
+                height: 64px;
+                line-height: 64px;
+                cursor: pointer;
+                margin-left: 16px;
+                // 退出伪类
+                &:hover {
+                    background-color:#eee;// 接近背景
+                }
+            }
+
+        }
+    }
+
+    .app-content { // 内容
+        display: flex;
+
+        .left { // 左
+            width: 256px;
+            background-color: #efefef;
+            position: fixed;
+            top: 64px;
+            bottom: 0;// 占满
+        }
+
+        .right { // 右
+            flex: 1;
+            padding: 24px;
+            margin-left: 256px;
+        }
+    }
+
+}
