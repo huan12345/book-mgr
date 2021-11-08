@@ -1,5 +1,6 @@
 <!-- 组件 -->
 <template>
+    <!-- 两端对其 -->
     <div class="space-between">
         <!-- 插槽 -->
         <slot />

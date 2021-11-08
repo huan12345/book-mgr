@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';//路由
 import store from './store';
 import Antd from 'ant-design-vue';//标签样式
-import SpaceBetween from './components/SpaceBetween/index.vue';
+import SpaceBetween from './components/SpaceBetween/index.vue';// 两端对齐
 
 import 'ant-design-vue/dist/antd.css';//引进样式
 //use注册，注册完后作为全局组件去使用

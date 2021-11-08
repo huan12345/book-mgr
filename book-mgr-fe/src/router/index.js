@@ -1,18 +1,19 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-//前端路由配置，从上到下，先匹配成功的就使用
+//前端路由地址，从上到下匹配，数组顺序匹配
 const routes = [
   {
-    path: '/auth',//认证路径
+    path: '/auth',// /auth显示认证页面
     name: 'Auth',
     component: () => import(/* webpackChunkName: "auth" */ '../views/Auth/index.vue'),//认证的异步渲染
   },
   {
-    path: '/',// 基础布局
+    path: '/',// /显示基础页面
     name: 'BasicLayout',
     component: () => import(/* webpackChunkName: "BasicLayout" */ '../layout/BasicLayout/index.vue'),//认证的异步渲染
+    // 子路由，渲染于<router-view />路由容器中
     children: [
       {
-        path: 'books',// 图书管理路径
+        path: 'books',// /books：用'../views/Books/index.vue'渲染<router-view />路由容器
         name: 'Books',
         component: () => import(/* webpackChunkName: "Books" */ '../views/Books/index.vue'),
       },
