@@ -24,7 +24,7 @@
             </div>
             <!-- 下右 --> 
             <div class="right">
-                <router-view /><!-- 路由容器，根据不同路由渲染不同东西 -->
+                <router-view /><!-- 路由容器，根据不同路由路径渲染不同东西 -->
             </div>
         </div>
     </div>

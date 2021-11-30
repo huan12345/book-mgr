@@ -1,6 +1,5 @@
-// arg参数，isReject拒绝
-// Promise 实例，承诺做完后，既等待（await）再赋值
-// async 函数 返回的是一个 promise
+// async函数返回的是一个promise函数，和await搭配
+// Promise 一个承诺，成功或者失败
 const request = (arg,isReject) => {
     return new Promise((resolve,reject) => {
         setTimeout(() => {

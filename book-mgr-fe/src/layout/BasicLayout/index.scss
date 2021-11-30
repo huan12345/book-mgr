@@ -1,24 +1,24 @@
 // 基础布局框架样式  
 .basic-layout { 
-    // 占位
+    // 占位，用于显示Nav
     .app-header-placeholder { 
-        height: 64px;// 跟app-header同高度，用于占位
+        height: 64px;// 跟app-header同高度，占位
         width: 100%;
     }
     // 上
     .app-header { 
-        height: 64px;// 高
+        height: 64px; // 高
         position: fixed; // 相对浏览器绝对定位
-        top: 0;// 顶0
-        left: 0;// 左0 （固定于浏览器左上角）
+        top: 0; // 顶0
+        left: 0; // 左0 （固定于浏览器左上角）
         background-color: #fff;
         box-shadow: 0 2px 8px #f0f1f2; // 阴影
         display: flex; // "弹性布局"
-        align-items: center;// 所有内容在纵轴上垂直居中
-        justify-content: space-between;// 元素两端对齐
-        padding: 0 16px;// 左右空白
-        width: 100%;// 铺满  
-        z-index: 1;// z轴1
+        align-items: center; // 所有内容在纵轴上垂直居中
+        justify-content: space-between; // 元素两端对齐
+        padding: 0 16px; // 左右空白
+        width: 100%; // 铺满  
+        z-index: 1; // z轴1
         // 上左
         .left {
             display: flex;// 左边元素同行
@@ -47,6 +47,7 @@
                 line-height: 64px;
                 cursor: pointer;// 小手指
                 margin-left: 16px;
+
                 // 光标移动到这里时变灰色
                 &:hover {
                     background-color:#eee;// 接近背景
@@ -62,14 +63,14 @@
         // 下左
         .left { 
             width: 256px;
-            background-color: #efefef;
+            background-color: white;
             position: fixed;
             top: 64px;
             bottom: 0;// 从上到下占满
         }
         // 下右
         .right { 
-            flex: 1;
+            flex: 1; // 剩余空间占满
             padding: 24px;
             margin-left: 256px;
         }

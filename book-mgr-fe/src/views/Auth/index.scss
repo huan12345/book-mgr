@@ -1,49 +1,59 @@
-//背景
+// 背景
 .bg {
-    position:fixed;//位置固定
-    left: 0;//铺满
-    top: 0;//铺满
-    right: 0;//铺满
-    bottom: 0;//铺满
+    position:fixed;// 位置固定
+
+    // 铺满
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
     background-image: url("https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg");
-    background-repeat: no-repeat;//不重复
-    background-size: cover;//自动适应屏幕大小
-    background-position: center center;//居中
+    background-repeat: no-repeat;// 不重复
+    background-size: cover;// 自动适应屏幕大小
+    background-position: center center;// 居中
 
 }
-//嵌套
+
+// 认证
 .auth {
-    // 标题
+    // 标题（嵌套语法）
     .title-info {
-        text-align: center;//居中
-        margin-top: 100px;//头顶空白
+        text-align: center;// 标题居中
+        margin-top: 100px;// 头顶空白
         display: flex;// 居左，放同一行
-        align-items: center;//图片标题同行居中
-        justify-content: center;
+        align-items: center;// 图片标题同行居中
+        justify-content: center;// 居中
         margin-bottom: 32px;// 底距
+
         // logo
         img {
             width: 60px;
             height: 60px;
         }
 
+        // 标题
         h2 {
             margin: 0;
-            margin-left: 18px;//h2左侧空白距离
+            margin-left: 18px;// h2左侧空白距离
         }
 
     }
+
     //认证菜单
     .form {
-        width: 400px;//宽度
-        margin: 0 auto;//居中
-    }
+        width: 400px;// 宽度
+        margin: 0 auto;// 居中
+    } 
+    
     // 输入框、按钮
     .item {
-        margin-bottom:  16px;//下边距
+        margin-bottom:  16px;// 下边距
+        
+        button {
+            width: 100%;//占满
+        }
     }
 
-    button {
-        width: 100%;//占满
-    }
+    
 }

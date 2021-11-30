@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const { getMeta } = require('../helpers');
+const mongoose = require('mongoose'); // db
+const { getMeta } = require('../helpers'); // 时间
 
 const BookSchema = new mongoose.Schema({
     // 书名
@@ -15,7 +15,9 @@ const BookSchema = new mongoose.Schema({
     // 库存
     count: Number,
     
+    // 时间
    meta: getMeta(),
 });
-//model注册User Schema
+
+// model注册User Schema
 mongoose.model('Book', BookSchema);

@@ -1,8 +1,8 @@
 // 收索框
 .search {
     width: 200px;
-    display: flex;
-    align-items: center;
+    display: flex; // 左右
+    align-items: center; // 垂直居中
     // 返回
     a {
         width: 40px;

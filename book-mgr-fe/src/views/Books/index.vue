@@ -15,7 +15,7 @@
                     v-model:value="keyword"
                     @search="onSearch"
                 />
-                <!-- 返回查询首页 -->
+                <!-- 返回查询首页 if 显示/关闭-->
                 <a v-if="isSearch" href="javascript:;" @click="backAll">返回</a>
                 </div>  
                 <!-- 添加书籍按钮 -->
@@ -28,6 +28,7 @@
                 :columns="columns" 
                 :data-source="list"
                 :pagination="false"
+                bordered
             >
                 <!-- 出版时间格式化 -->
                 <template #publishDate="data">
@@ -41,6 +42,8 @@
                 </template>
                 <!-- 删除书籍 -->
                 <template #actions="record">
+                    <a href="javascript:;" @click="toDetail(record)">详情</a>
+                    &nbsp;
                     <a href="javascript:;" @click="update(record)">编辑</a>
                     &nbsp;
                     <a href="javascript:;" @click="remove(record)">删除</a>
@@ -49,6 +52,7 @@
             <!-- 分页组件 -->
             <space-between style="margin-top: 23px">
                 <div />
+                <!-- 分页组件 -->
                 <a-pagination 
                     v-model:current="curPage" 
                     :total="total"
@@ -57,6 +61,7 @@
                 />
             </space-between>
         </a-card>
+        
         <!-- 添加一本书籍 -->
         <add-one 
             v-model:show="show"

@@ -1,15 +1,21 @@
-//     Schemas(映射了MongoDB下的一个集合UserSchema，并且他的内容就是集合下文档的构成User)  
-//     Modal(可以理解成是根据Schema生成的一套方法，这套方法用来操作MongoDB下的集合和集合下的文档)
-const mongoose = require('mongoose');//连接数据库
-const { getMeta } = require('../helpers');// 导入Schemas创建修改时间
-// Schema 集合模板
-// Modal 模板利用（'名字'，模板）
-//创建User Schema
+// 连接数据库步骤：1. 给哪个数据库的；2. 哪个集合（Schema）；3. 添加什么格式的文档（Schema的内容）；
+// Schema 映射了MongoDB下的一个集合，并且他的内容就是集合下文档的构成；
+// Model 根据schema生成的一套方法，这套方法用来操作MongoDB集合和集合下的文档；
+
+const mongoose = require('mongoose');// mongoose用于连接mongodb
+
+const { getMeta, preSave } = require('../helpers');// getMeta创建更新时间
+
+// 创建UserSchema
 const UserSchema = new mongoose.Schema({
-   account: String,//账户  
-   password: String,//密码
-   //创建修改时间
-   meta: getMeta(),
+
+   account: String, // 账户
+   password: String,// 密码
+   
+   meta: getMeta(),// 创建更新时间
 });
-//model注册User Schema
+
+UserSchema.pre('save', preSave);
+
+// 注册UserSchema的Model
 mongoose.model('User', UserSchema);
